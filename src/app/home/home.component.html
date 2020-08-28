@@ -1,0 +1,17 @@
+<p>{{homeTitle}}</p>
+<ng-content></ng-content>
+
+<h2>The owner is {{owner}}</h2>
+
+<input [value]="valueForFirstInput">
+<input required="{{booleanForSecondInput}}">
+
+<button (click)='sayHello("Hello")'>Click me !</button>
+
+<input [(ngModel)]="book.title" />
+<p>
+  {{book.title}} by {{book.author}}
+</p>
+
+
+<button (click)="fireYellEvent($event)">Yell</button>

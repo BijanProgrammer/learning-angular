@@ -1,0 +1,31 @@
+<p [ngClass]="pStyles">directory works!</p>
+
+<input id="show" type="checkbox" checked (change)="clickedOnCheckBox()" />
+<label for="show">Show?</label>
+<p *ngIf="checked">Only show if true</p>
+
+<form id="filter">
+  <label for="search-input">Filter colors</label>
+  <input id="search-input" name="term" type="text" [(ngModel)]="searchTerm" value="" />
+</form>
+
+<ul id="colors-list">
+  <li *ngFor="let color of colors | filter:searchTerm">{{color.id}}. <span
+      [ngStyle]="{background: color.style}">{{color.name | uppercase}}</span></li>
+</ul>
+
+<button (click)="logIt()">Log</button>
+
+<style>
+  .blue {
+    color: cornflowerblue;
+  }
+
+  .red {
+    color: tomato;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+</style>
