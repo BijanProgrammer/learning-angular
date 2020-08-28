@@ -29,8 +29,9 @@ export class DirectoryComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.dataService
-			.fetchData()
-			.subscribe((data: any[]) => (this.colors = data));
+		this.dataService.fsGetColors().subscribe((data) => console.log(data));
+		// this.dataService
+		// 	.fetchData()
+		// 	.subscribe((data: any[]) => (this.colors = data));
 	}
 }
